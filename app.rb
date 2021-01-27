@@ -3,6 +3,7 @@ require 'sinatra/base'
 class BookmarkManager < Sinatra::Base
 
   get '/' do
+    #p ENV
     erb :index
   end
 
