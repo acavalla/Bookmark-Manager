@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "rspec"
+gem "pg"
 gem "sinatra"
-gem "capybara"
-gem "selenium-webdriver"
+
+gem "capybara", group: :test
+gem "rspec", group: :test
