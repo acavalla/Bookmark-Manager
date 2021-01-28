@@ -5,5 +5,6 @@ feature 'add bookmark' do
     click_button("Add bookmark")
     expect(page).to have_content('www.facebook.com')
     expect(page).to have_content('Added bookmark!')
+    expect(page).to have_content('RSPEC EXPLAIN')
   end
 end

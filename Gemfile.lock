@@ -11,7 +11,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    childprocess (3.0.0)
     diff-lcs (1.4.4)
     mini_mime (1.0.2)
     mustermann (1.1.1)
@@ -41,10 +40,6 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.1)
     ruby2_keywords (0.0.4)
-    rubyzip (2.3.0)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -62,7 +57,6 @@ DEPENDENCIES
   capybara
   pg
   rspec
-  selenium-webdriver
   sinatra
 
 BUNDLED WITH
