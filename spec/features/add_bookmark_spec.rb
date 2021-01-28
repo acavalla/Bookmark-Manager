@@ -3,8 +3,6 @@ feature 'add bookmark' do
     visit('/bookmarks/new')
     fill_in :bookmark, with: 'facebook.com'
     click_button("Add bookmark")
-    expect(page).to have_content('www.facebook.com')
-    expect(page).to have_content('Added bookmark!')
-    expect(page).to have_content('RSPEC EXPLAIN')
+    expect(page).to have_content('facebook.com')
   end
 end

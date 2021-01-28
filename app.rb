@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
 
@@ -12,8 +13,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/add-bookmark' do
-    @new_bookmark = params[:bookmark]
-    Bookmark.create(@new_bookmark)
+    Bookmark.create(params['bookmark'])
     redirect '/bookmarks'
   end
 
