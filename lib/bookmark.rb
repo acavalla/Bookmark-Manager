@@ -1,13 +1,13 @@
 require 'pg'
 
 class Bookmark
-  def self.create(new_bookmark)
+  def self.create(url, title)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    result = connection.exec("INSERT INTO bookmarks (url) VALUES ('#{new_bookmark}');")
+    result = connection.exec("INSERT INTO bookmarks (url, title) VALUES ('#{url}', '#{title}');")
   end
 
   def self.all
@@ -17,7 +17,7 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
     result = connection.exec('SELECT * FROM bookmarks;')
-    result.map { |bookmark| bookmark['url'] }
+    result.map { |bookmark| [bookmark['url'], bookmark['title']] }
   end
 
 
