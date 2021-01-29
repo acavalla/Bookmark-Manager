@@ -2,11 +2,10 @@
 
 feature 'delete bookmark' do
   scenario 'user can delete a bookmark from the bookmark manager' do
-    Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers')
+    Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
     visit('/bookmarks')
-
-    fill_in :del_title, with: 'Github'
-    click_button('Delete bookmark')
-    expect(page).not_to have_content('Github')
+    first('.bookmark').click_button 'Delete'
+    expect(current_path).to eq '/bookmarks'
+    expect(page).not_to have_link('Makers Academy', href: 'http://www.makersacademy.com')
   end
 end
