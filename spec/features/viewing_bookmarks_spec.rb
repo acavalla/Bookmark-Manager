@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Viewing bookmarks' do
   scenario 'A user can see bookmarks' do
     connection = PG.connect(dbname: 'bookmark_manager_test')
@@ -9,8 +11,8 @@ feature 'Viewing bookmarks' do
 
     visit('/bookmarks')
 
-    expect(page).to have_content "Makers"
-    expect(page).to have_content "Destroy all Software"
-    expect(page).to have_content "Google"
+    expect(page).to have_content 'Makers'
+    expect(page).to have_content 'Destroy all Software'
+    expect(page).to have_content 'Google'
   end
 end

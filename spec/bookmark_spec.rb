@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/bookmark'
 
 describe Bookmark do
@@ -5,7 +7,7 @@ describe Bookmark do
     it 'returns all bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    # Add the test data
+      # Add the test data
       connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.makersacademy.com', 'Makers');")
       connection.exec("INSERT INTO bookmarks (url, title) VALUES('http://www.twitter.com', 'Twitter');")
       connection.exec("INSERT INTO bookmarks (url, title) VALUES('http://www.github.com', 'Github');")
@@ -13,7 +15,7 @@ describe Bookmark do
       bookmarks = Bookmark.all
 
       expect(bookmarks[0].title).to eq 'Makers'
-      expect(bookmarks[1].url).to eq("http://www.twitter.com")
+      expect(bookmarks[1].url).to eq('http://www.twitter.com')
     end
   end
 

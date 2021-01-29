@@ -1,7 +1,10 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "pg"
-gem "sinatra"
+source 'https://rubygems.org'
 
-gem "capybara", group: :test
-gem "rspec", group: :test
+gem 'pg'
+gem 'rubocop'
+gem 'sinatra'
+
+gem 'capybara', group: :test
+gem 'rspec', group: :test
